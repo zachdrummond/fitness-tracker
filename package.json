@@ -1,7 +1,7 @@
 {
   "name": "mongoose_skeleton",
   "version": "1.0.0",
-  "description": "",
+  "description": "* [Description](#Description)\r * [Links](#Links)\r * [Design Elements](#Design-Elements)\r * [App Preview](#App-Preview)\r * [Credits](#Credits)",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,8 +12,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
-    "mongoose": "^5.3.16",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
     "morgan": "^1.9.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachdrummond/fitness-tracker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/zachdrummond/fitness-tracker/issues"
+  },
+  "homepage": "https://github.com/zachdrummond/fitness-tracker#readme"
 }
