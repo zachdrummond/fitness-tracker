@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const workoutController = require("./controllers/workoutController");
 
 const app = express();
 
@@ -11,6 +12,8 @@ app.listen(PORT, function () {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
+app.use(workoutController);
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/fitness-trackerDB",
