@@ -55,6 +55,22 @@ router.post("/api/workouts", function (request, response) {
 
 // Update / Add a New Exercise
 router.put("/api/workouts/:id", function (request, response) {
+  db.Workout.findByIdAndUpdate(
+    request.params.id,
+    { $push: { exercises: request.body } },
+    { new: true }
+  )
+    .then((updatedWorkout) => {
+      response.json(updatedWorkout);
+    })
+    .catch((error) => {
+      console.log(error);
+      response.json({
+        error: true,
+        data: null,
+        message: `Failed to update workout with id: ${req.params.id}.`,
+      });
+    });
 });
 
 module.exports = router;
