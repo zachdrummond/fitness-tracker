@@ -19,6 +19,18 @@ router.get("/stats", function (request, response) {
 // API ROUTES
 // Get Last Workout
 router.get("/api/workouts", function (request, response) {
+  db.Workout.find({})
+    .then((workout) => {
+      response.json(workout);
+    })
+    .catch((error) => {
+      console.log(error);
+      response.json({
+        error: true,
+        data: null,
+        message: "Failed to retrieve workout.",
+      });
+    });
 });
 
 // Get Workouts in Range
