@@ -1,3 +1,4 @@
+// DEPENDENCIES AND MODULES
 const express = require("express");
 const path = require("path");
 const router = express.Router();
@@ -66,7 +67,7 @@ router.post("/api/workouts", function (request, response) {
     });
 });
 
-// Update / Add a New Exercise
+// Update an Exercise
 router.put("/api/workouts/:id", function (request, response) {
   db.Workout.findByIdAndUpdate(
     request.params.id,
