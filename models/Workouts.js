@@ -1,6 +1,9 @@
+// DEPENDENCIES
 const mongoose = require("mongoose");
+// SCHEMA CONSTRUCTOR
 const Schema = mongoose.Schema;
 
+// SCHEMA
 const WorkoutSchema = new Schema(
   {
     day: {
@@ -45,12 +48,15 @@ const WorkoutSchema = new Schema(
   }
 );
 
+// VIRTUAL METHOD FOR DURATION
 WorkoutSchema.virtual("totalDuration").get(function () {
   return this.exercises.reduce((total, exercise) => {
     return total + exercise.duration;
   }, 0);
 });
 
+// MODEL
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
+// MODULE
 module.exports = Workout;
