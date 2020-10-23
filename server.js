@@ -1,3 +1,4 @@
+// DEPENDENCIES
 const express = require("express");
 const mongoose = require("mongoose");
 const workoutController = require("./controllers/workoutController");
@@ -10,11 +11,13 @@ app.listen(PORT, function () {
   console.log(`http://localhost:${PORT}`);
 });
 
+// MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 app.use(workoutController);
 
+// DATABASE CONNECTION
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:27017/fitness-trackerDB",
   {
@@ -25,6 +28,7 @@ mongoose.connect(
   }
 );
 
+// EVENT LISTENERS FOR DATABASE CONNECTION
 mongoose.connection.on("connected", () => {
   console.log("Mongoose successfully connected.");
 });
