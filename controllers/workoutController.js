@@ -35,6 +35,18 @@ router.get("/api/workouts", function (request, response) {
 
 // Get Workouts in Range
 router.get("/api/workouts/range", function (request, response) {
+  db.Workout.find({})
+    .then((workout) => {
+      response.json(workout);
+    })
+    .catch((error) => {
+      console.log(error);
+      response.json({
+        error: true,
+        data: null,
+        message: "Failed to retrieve workout.",
+      });
+    });
 });
 
 // Add a New Workout
