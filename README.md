@@ -1,12 +1,5 @@
 # fitness-tracker
 
-## Table of Contents
-* [Description](#Description)
-* [Links](#Links)
-* [Design Elements](#Design-Elements)
-* [App Preview](#App-Preview)
-* [Credits](#Credits)
-
 ## Description
 This is an app that tracks all of your workout needs in one place. You can create new workout plans, continue existing workout plans, add/update exercises within workout plans, and even view statistics on your workout plans. This app will enable you to spend more of your time on reaching your fitness goals and less of your time on spreadsheets.
 
@@ -17,7 +10,8 @@ This is an app that tracks all of your workout needs in one place. You can creat
 ## Design Elements
 * JavaScript
 * Node.js
-* Node Package Manager - Express, Mongoose
+* Express.js
+* Node Package Manager - Mongoose
 * MongoDB
 * Model View Controller Architecture
 * HTML
