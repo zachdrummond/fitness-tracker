@@ -36,6 +36,7 @@ router.get("/api/workouts", function (request, response) {
 // Get Workouts in Range
 router.get("/api/workouts/range", function (request, response) {
   db.Workout.find({})
+    .limit(7)
     .then((workout) => {
       response.json(workout);
     })
