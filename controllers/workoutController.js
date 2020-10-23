@@ -3,20 +3,9 @@ const path = require("path");
 const router = express.Router();
 const db = require("../models");
 
-// Get All Workouts
+// VIEW ROUTES
 router.get("/", function (request, response) {
-  db.Workout.find({})
-    .then((workout) => {
-      response.json(workout);
-    })
-    .catch((error) => {
-      console.log(error);
-      res.json({
-        error: true,
-        data: null,
-        message: "Failed to retrieve workouts.",
-      });
-    });
+  response.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 router.get("/exercise", function (request, response) {
@@ -27,11 +16,14 @@ router.get("/stats", function (request, response) {
   response.sendFile(path.join(__dirname, "../public/stats.html"));
 });
 
+// API ROUTES
 // Get Last Workout
-router.get("/api/workouts", function (request, response) {});
+router.get("/api/workouts", function (request, response) {
+});
 
 // Get Workouts in Range
-router.get("/api/workout/range", function (request, response) {});
+router.get("/api/workouts/range", function (request, response) {
+});
 
 // Add a New Workout
 router.post("/api/workouts", function (request, response) {
@@ -50,6 +42,7 @@ router.post("/api/workouts", function (request, response) {
 });
 
 // Update / Add a New Exercise
-router.put("/api/workouts", function (request, response) {});
+router.put("/api/workouts/:id", function (request, response) {
+});
 
 module.exports = router;

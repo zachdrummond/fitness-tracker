@@ -16,7 +16,7 @@ app.use(express.static("public"));
 app.use(workoutController);
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/fitness-trackerDB",
+  process.env.MONGODB_URI || "mongodb://localhost:27017/fitness-trackerDB",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -29,10 +29,6 @@ mongoose.connection.on("connected", () => {
   console.log("Mongoose successfully connected.");
 });
 
-mongoose.connection.on("error", (err) => {
-  console.log("Mongoose connection error " + err);
+mongoose.connection.on("error", (error) => {
+  console.log("Mongoose connection error " + error);
 });
-
-app.get("/api/config", (req, res) => {
-    res.json({ success: true });
-  });

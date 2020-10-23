@@ -41,15 +41,7 @@ This is an app that tracks all of your workout needs in one place. You can creat
 ![2](./public/assets/img/.png)
 
 ## Credits
-* https://nodejs.org/en/
-* https://www.npmjs.com/
-* https://www.npmjs.com/package/nodemon
-* https://www.npmjs.com/package/mysql
-* https://www.mysql.com/
-* http://expressjs.com/
-* https://getbootstrap.com/
-* https://jquery.com/
-* https://www.heroku.com/
+* 
 
 
 
