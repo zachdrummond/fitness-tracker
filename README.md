@@ -18,8 +18,9 @@ This is an app that tracks all of your workout needs in one place. You can creat
 * JavaScript
 * Node.js
 * Express.js
-* Node Package Manager - Mongoose
+* Mongoose.js
 * MongoDB
+* Node Package Manager - Compression, Morgan, Lite-Server
 * Model View Controller Architecture
 * HTML
 * CSS
